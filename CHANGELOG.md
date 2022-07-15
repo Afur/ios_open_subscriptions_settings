@@ -6,3 +6,6 @@ add openSubscriptionsSettings
 
 ## 0.0.2-beta
 fix bug name class
+
+## 0.0.3-beta
+fix bug
