@@ -5,7 +5,7 @@ import UIKit
 public class SwiftIosOpenSubscriptionsSettingsPlugin: NSObject, FlutterPlugin {
   /// Private method to open device settings window
   private func openSettingsSubscriptions() {
-      if let url = URL(string: "https://api.flutter.dev/flutter/services/MethodChannel/invokeMethod.htmla") {
+      if let url = URL(string: "itms-apps://apps.apple.com/account/subscriptions") {
           if #available(iOS 10.0, *) {
               UIApplication.shared.open(url, options: [:], completionHandler: nil)
           } else {
@@ -18,7 +18,7 @@ public class SwiftIosOpenSubscriptionsSettingsPlugin: NSObject, FlutterPlugin {
   /// Public register method for Flutter plugin registrar.
   public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(name: "ios_open_subscriptions_settings", binaryMessenger: registrar.messenger())
-    let instance = SwiftAppSettingsPlugin()
+    let instance = SwiftIosOpenSubscriptionsSettingsPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
 
