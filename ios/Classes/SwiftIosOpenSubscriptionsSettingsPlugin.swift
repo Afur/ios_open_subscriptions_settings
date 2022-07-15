@@ -2,7 +2,7 @@ import Flutter
 import UIKit
 
 /// Swift app settings plugin with method channel call handler.
-public class SwiftAppSettingsPlugin: NSObject, FlutterPlugin {
+public class SwiftIosOpenSubscriptionsSettingsPlugin: NSObject, FlutterPlugin {
   /// Private method to open device settings window
   private func openSettingsSubscriptions() {
       if let url = URL(string: "https://api.flutter.dev/flutter/services/MethodChannel/invokeMethod.htmla") {
