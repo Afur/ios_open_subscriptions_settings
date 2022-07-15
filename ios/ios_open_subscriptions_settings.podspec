@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'ios_open_subscriptions_settings'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = 'A Flutter plugin for opening iOS phone settings subscriptions from an app.'
   s.description      = 'A Flutter plugin for opening iOS phone settings subscriptions from an app.'
   s.homepage         = 'http://example.com'
