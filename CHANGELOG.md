@@ -9,3 +9,6 @@ fix bug name class
 
 ## 0.0.3-beta
 fix bug
+
+## 0.0.4
+release package

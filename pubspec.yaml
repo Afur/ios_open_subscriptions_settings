@@ -1,6 +1,6 @@
 name: ios_open_subscriptions_settings
 description: A Flutter plugin for opening iOS phone settings subscriptions from an app.
-version: 0.0.3-beta
+version: 0.0.4
 homepage: https://github.com/Vlad-Kostyuk/ios_open_subscriptions_settings.git
 
 environment:

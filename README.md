@@ -8,7 +8,7 @@ A Flutter plugin for opening iOS phone settings subscriptions from an app.
 dependencies:
   flutter:
     sdk: flutter
-  ios_open_subscriptions_settings: 0.0.3-beta
+  ios_open_subscriptions_settings: 0.0.4
 ```
 
 Next, import 'ios_open_subscriptions_settings.dart' into your dart code.
