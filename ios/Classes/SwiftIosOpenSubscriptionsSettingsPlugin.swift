@@ -1,25 +1,32 @@
 import Flutter
 import UIKit
+import StoreKit
 
-/// Swift app settings plugin with method channel call handler.
 public class SwiftIosOpenSubscriptionsSettingsPlugin: NSObject, FlutterPlugin {
-  private func openSettingsSubscriptions() {
-      if let url = URL(string: "itms-apps://apps.apple.com/account/subscriptions") {
-          if #available(iOS 10.0, *) {
-              UIApplication.shared.open(url, options: [:], completionHandler: nil)
-          } else {
-              UIApplication.shared.openURL(url)
-          }
-      }
-  }
+  @available(iOS 15.0, *)
+    func showCancelSubscriptionModal() async {
+        if #available(iOS 15.0, *) {
+            if let window = await UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                do {
+                    try await AppStore.showManageSubscriptions(in: window)
+                } catch {
+                    
+                }
+            }
+        }
+    }
+
+    public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
+        if #available(iOS 15.0, *) {
+            Task {
+                await self.showCancelSubscriptionModal()
+            }
+        }
+    }
 
   public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(name: "ios_open_subscriptions_settings", binaryMessenger: registrar.messenger())
     let instance = SwiftIosOpenSubscriptionsSettingsPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
-  }
-
-  public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-      openSettingsSubscriptions()
   }
 }
